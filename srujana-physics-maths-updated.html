@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Srujana Physics & Maths Academy</title>
+
+<meta name="description" content="Learn Physics and Mathematics with Srujana Academy. JEE, NEET and Foundation preparation, study materials and online tests.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8fc;
+    color: #263449;
+    line-height: 1.6;
+}
+
+header {
+    background: #102d50;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffbd4a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffbd4a;
+}
+
+.hero {
+    padding: 85px 8%;
+    background: linear-gradient(120deg,#102d50,#21649a);
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 27px;
+    background: #ffb536;
+    color: #102d50;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 30px;
+    color: #102d50;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #69788c;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 28px 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: #17558b;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #68778a;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.about {
+    background: #eaf2fa;
+}
+
+.formula {
+    font-size: 20px;
+    color: #15558c;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.material-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 9px 17px;
+    background: #17558b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.quiz {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #dce4ed;
+}
+
+.quiz button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #cbd6e2;
+    background: #f5f8fc;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.quiz button:hover {
+    background: #dcecff;
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #17558b;
+}
+
+.registration {
+    background: #eaf2fa;
+}
+
+form {
+    max-width: 550px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 15px #dce4ed;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccd5df;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form .btn {
+    width: 100%;
+    margin-top: 22px;
+}
+/* CONTACT SECTION */
+.contact-card {
+    max-width: 760px;
+    margin: 30px auto 0;
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    text-align: left;
+}
+
+.contact-card h3 {
+    color: #17558b;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.contact-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e8eef5;
+    overflow-wrap: anywhere;
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-item a {
+    color: #17558b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.contact-actions a {
+    display: inline-block;
+    padding: 11px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #17558b;
+    color: white;
+}
+
+.contact-actions a:hover {
+    background: #102d50;
+}
+
+footer {
+    background: #102d50;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer p {
+    margin: 7px;
+}
+
+@media(max-width:700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        SRUJANA <span>ACADEMY</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#materials">Materials</a>
+        <a href="#tests">Online Tests</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <h1>Srujana Physics & Maths Academy</h1>
+
+    <p>Build Strong Concepts. Achieve Great Success.</p>
+
+    <p>
+        Expert Learning in Physics & Mathematics
+        <br>
+        JEE | NEET | Foundation
+    </p>
+
+    <a href="#courses" class="btn">Explore Courses</a>
+
+</section>
+
+<!-- COURSES -->
+
+<section class="section" id="courses">
+
+    <h2>Our Courses</h2>
+
+    <p class="subtitle">
+        Quality Education for Every Student
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⚛️</div>
+            <h3>Physics</h3>
+            <p>
+                Understand Physics through concepts,
+                numerical problems and practical examples.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>
+                Improve mathematical skills with
+                formulas, methods and problem solving.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>JEE Preparation</h3>
+            <p>
+                Preparation for JEE Main and Advanced
+                with concept-based learning.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔬</div>
+            <h3>NEET Preparation</h3>
+            <p>
+                Physics preparation with important
+                concepts and numerical practice.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Foundation</h3>
+            <p>
+                Build a strong foundation in
+                Physics and Mathematics.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Online Classes</h3>
+            <p>Physics & Mathematics</p>
+            <p>Available Across All India & USA</p>
+            <p>JEE | NEET | Foundation</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+
+    <h2>About Our Academy</h2>
+
+    <p class="subtitle">
+        Experience, Knowledge and Quality Education
+    </p>
+
+    <h3>J. Naga Pradeep</h3>
+    <p class="subtitle">Physics & Mathematics Faculty</p>
+    <h3>20 Years of Teaching Experience</h3>
+
+    <p>
+        Our aim is to make Physics and Mathematics
+        easy and interesting for students.
+
+        We focus on conceptual clarity,
+        problem solving and examination preparation.
+    </p>
+
+</section>
+
+<!-- STUDY MATERIALS -->
+
+<section class="section" id="materials">
+
+    <h2>Study Materials</h2>
+
+    <p class="subtitle">
+        Learn Important Concepts and Formulas
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Physics Formulas</h3>
+            <p>Motion, Force, Energy and Electricity</p>
+            <div class="formula">F = ma</div>
+            <div class="formula">v = u + at</div>
+            <a class="material-btn" href="#register">Learn More</a>
+        </div>
+
+        <div class="card">
+            <h3>Mathematics Formulas</h3>
+            <p>Algebra, Trigonometry and Calculus</p>
+            <div class="formula">(a+b)² = a²+2ab+b²</div>
+            <div class="formula">sin²θ + cos²θ = 1</div>
+            <a class="material-btn" href="#register">Learn More</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ONLINE TEST -->
+
+<section class="section about" id="tests">
+
+    <h2>Online Practice Test</h2>
+
+    <p class="subtitle">
+        Test Your Knowledge
+    </p>
+
+    <div class="quiz">
+
+        <h3 id="question">Question 1: What is the SI unit of Force?</h3>
+
+        <button onclick="checkAnswer(0)">A. Joule</button>
+        <button onclick="checkAnswer(1)">B. Newton</button>
+        <button onclick="checkAnswer(2)">C. Watt</button>
+        <button onclick="checkAnswer(3)">D. Pascal</button>
+
+        <p id="result"></p>
+
+        <button class="btn" onclick="nextQuestion()">
+            Next Question
+        </button>
+
+    </div>
+
+</section>
+
+<!-- STUDENT REGISTRATION -->
+
+<section class="section registration" id="register">
+
+    <h2>Student Registration</h2>
+
+    <p class="subtitle">
+        Start Your Learning Journey With Us
+    </p>
+
+    <form onsubmit="registerStudent(event)">
+
+        <label>Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter your name" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" id="mobile" placeholder="Enter mobile number"
+        pattern="[0-9]{10}" required>
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter email">
+
+        <label>Select Course</label>
+        <select id="course" required>
+            <option value="">Choose Course</option>
+            <option>Physics</option>
+            <option>Mathematics</option>
+            <option>JEE Main & Advanced</option>
+            <option>NEET Physics</option>
+            <option>Foundation</option>
+        </select>
+
+        <label>Class / Grade</label>
+        <select id="grade" required>
+            <option value="">Select Class</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11</option>
+            <option>Class 12</option>
+            <option>Dropper</option>
+        </select>
+
+        <button type="submit" class="btn">
+            Register via WhatsApp
+        </button>
+
+    </form>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p class="subtitle">Get in touch for Physics and Mathematics tuition enquiries</p>
+
+    <div class="contact-card">
+        <h3>Srujana Physics & Maths Academy</h3>
+        <p class="contact-item"><strong>Teacher:</strong> J. Naga Pradeep</p>
+        <p class="contact-item"><strong>Phone 1:</strong> <a href="tel:+919014893138">9014893138</a></p>
+        <p class="contact-item"><strong>Phone 2:</strong> <a href="tel:+919652156309">9652156309</a></p>
+        <p class="contact-item"><strong>Email:</strong> <a href="mailto:jjonnalagadda09@gmail.com">jjonnalagadda09@gmail.com</a></p>
+        <p class="contact-item"><strong>Home Tuitions:</strong> Vijayawada</p>
+        <p class="contact-item"><strong>Online Classes:</strong> All India & USA</p>
+
+        <div class="contact-actions">
+            <a href="tel:+919014893138">Call 9014893138</a>
+            <a href="tel:+919652156309">Call 9652156309</a>
+            <a href="mailto:jjonnalagadda09@gmail.com">Send Email</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Srujana Physics & Maths Academy</h2>
+
+    <p>Learn Today - Lead Tomorrow</p>
+
+    <p>Physics | Mathematics | JEE | NEET</p>
+
+    <p>© 2026 Srujana Academy. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+// ONLINE QUIZ
+
+const questions = [
+{
+q:"What is the SI unit of Force?",
+o:["Joule","Newton","Watt","Pascal"],
+a:1
+},
+{
+q:"What is the value of sin 30°?",
+o:["1","0","1/2","√3/2"],
+a:2
+},
+{
+q:"What is the SI unit of Power?",
+o:["Watt","Newton","Metre","Joule"],
+a:0
+}
+];
+
+let current = 0;
+let answered = false;
+
+function loadQuestion() {
+
+    answered = false;
+
+    let q = questions[current];
+
+    document.getElementById("question").innerText =
+        "Question " + (current+1) + ": " + q.q;
+
+    let buttons = document.querySelectorAll(".quiz button:not(.btn)");
+
+    buttons.forEach((btn,i) => {
+        btn.innerText = String.fromCharCode(65+i) + ". " + q.o[i];
+        btn.disabled = false;
+        btn.style.opacity = "1";
+    });
+
+    document.getElementById("result").innerText = "";
+}
+
+function checkAnswer(choice) {
+
+    if(answered) return;
+
+    answered = true;
+
+    let correct = questions[current].a;
+
+    if(choice === correct) {
+        document.getElementById("result").innerText =
+            "Correct Answer! Excellent!";
+    } else {
+        document.getElementById("result").innerText =
+            "Incorrect. Correct answer: " +
+            questions[current].o[correct];
+    }
+
+    document.querySelectorAll(".quiz button:not(.btn)")
+    .forEach(btn => btn.disabled = true);
+}
+
+function nextQuestion() {
+
+    current++;
+
+    if(current >= questions.length) {
+        current = 0;
+    }
+
+    loadQuestion();
+}
+
+// WHATSAPP REGISTRATION
+
+function registerStudent(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("studentName").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
+    const course = document.getElementById("course").value;
+    const grade = document.getElementById("grade").value;
+
+    const academyNumber = "91XXXXXXXXXX";
+
+    const message =
+        "Student Registration%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Mobile: " + encodeURIComponent(mobile) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Course: " + encodeURIComponent(course) + "%0A" +
+        "Class: " + encodeURIComponent(grade);
+
+    window.open(
+        "https://wa.me/" + academyNumber + "?text=" + message,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
